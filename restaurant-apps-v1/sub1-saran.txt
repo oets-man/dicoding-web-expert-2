@@ -1,0 +1,14 @@
+Submission Anda akan dinilai oleh reviewer dengan skala 1-5 berdasarkan dari parameter yang ada.
+
+Anda dapat menerapkan beberapa saran untuk mendapatkan nilai tinggi. Beberapa saran tersebut dapat dilihat pada poin-poin di bawah ini.
+
+    Menerapkan tampilan aplikasi yang menarik:
+        Memiliki pemilihan warna yang pas dengan tema aplikasi (Dalam memilih warna, Anda dapat memanfaatkan tools pemilihan warna seperti colorhunt.co).
+        Tata letak elemen yang pas.
+        Contoh: Tidak ada konten yang bertumpuk.
+        Penggunaan font yang pas dengan tema.
+        Penerapan padding, margin yang pas.
+    Terdapat konten tambahan yang relevan dengan tema aplikasi, di luar dari data yang disediakan.
+    Menggunakan elemen secara bijak sesuai dengan fungsinya. Contoh: Tidak menggunakan button sebagai anchor, ataupun sebaliknya.
+
+    Dalam penyusunan CSS, Anda boleh menggunakan SASS bila Anda nyaman menggunakannya. Gunakanlah sass-loader untuk memuat berkas sass pada webpack.
