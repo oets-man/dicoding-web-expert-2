@@ -17,6 +17,7 @@
     </h1>
   </div>
 </header>
+<a id="hamburger" href="#">☰ Menu</a>
 <nav id="drawer" class="nav">
   <ul class="nav__list">
     <li class="nav__item"><a href="#">Articles</a></li>
@@ -165,5 +166,22 @@
     <li><a href="#">Contact</a></li>
   </ul>
 </footer>
+
+<script>
+const hamburgerButtonElement = document.querySelector('#hamburger');
+const drawerElement = document.querySelector('#drawer');
+const mainElement = document.querySelector('main');
+ 
+hamburgerButtonElement.addEventListener('click', event => {
+  drawerElement.classList.toggle('open');
+  event.stopPropagation();
+});
+ 
+mainElement.addEventListener('click', event => {
+  drawerElement.classList.remove('open');
+  event.stopPropagation();
+})
+
+</script>
 </body>
 </html>

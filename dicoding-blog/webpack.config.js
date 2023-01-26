@@ -19,10 +19,12 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/,
+        test: /\.(png|svg|jp?g|gif)$/i,
+        dependency: { not: ['url'] }, // tambah ini: cegah asset yang pake new url() ikut ke kompile sama asset module webpack
         use: [
           'file-loader',
         ],
+        type: 'javascript/auto', // tambah ini: cegah loader asset module webpack jalan dan pake loader sendiri
       },
     ],
   },
