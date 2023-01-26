@@ -1,6 +1,6 @@
-import css from './my-card.css';
+import css from './list-card.css';
 
-class MyCard extends HTMLElement {
+class ListCard extends HTMLElement {
 	constructor() {
 		super();
 		this.shadow = this.attachShadow({ mode: 'open' });
@@ -78,4 +78,4 @@ class MyCard extends HTMLElement {
 		});
 	}
 }
-customElements.define('my-card', MyCard);
+customElements.define('list-card', ListCard);

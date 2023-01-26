@@ -1,10 +1,10 @@
-import axios from 'axios';
+import api from '../config/api';
 
 class DataSource {
 	static getRestaurant = async () => {
 		try {
-			const axiosGet = await axios.get('https://restaurant-api.dicoding.dev/list');
-			const response = axiosGet.data;
+			const get = await api.get('list');
+			const response = get.data;
 			if (!response.error) {
 				return {
 					count: response.count,
@@ -23,4 +23,4 @@ class DataSource {
 	};
 }
 
-export { DataSource };
+export default  DataSource ;

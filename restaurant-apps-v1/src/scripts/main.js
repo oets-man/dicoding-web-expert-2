@@ -1,21 +1,22 @@
-import '../component/my-card';
-import { DataSource } from './data-source';
+import '../components/list-card';
+import data from './data-source';
+import { URL_PICTURE } from '../config/url';
 
 const main = () => {
-	const cardContainer = document.querySelector('#card-container');
-	const urlPicture = 'https://restaurant-api.dicoding.dev/images/small';
+	const container = document.querySelector('#card-container');
 	const start = async () => {
 		try {
-			const results = await DataSource.getRestaurant();
+			const results = await data.getRestaurant();
 			const { restaurants } = results;
-			for (const [index, restaurant] of restaurants.entries()) {
+			restaurants.forEach((restaurant, index) => {
 				setTimeout(() => {
-					restaurant.picture = `${urlPicture}/${restaurant.pictureId}`;
-					const myCard = document.createElement('my-card');
-					myCard.item = restaurant;
-					cardContainer.appendChild(myCard);
+					restaurant.picture = `${URL_PICTURE.SMALL}/${restaurant.pictureId}`;
+					const list = document.createElement('list-card');
+					list.item = restaurant;
+					container.appendChild(list);
 				}, 250 * index);
-			}
+
+			});
 		} catch (error) {
 			alert(error);
 		}
@@ -24,4 +25,4 @@ const main = () => {
 	window.addEventListener('load', start);
 };
 
-export { main };
+export default main;
