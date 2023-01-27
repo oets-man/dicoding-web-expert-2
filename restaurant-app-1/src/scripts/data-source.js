@@ -5,20 +5,14 @@ class DataSource {
 		try {
 			const get = await api.get('list');
 			const response = get.data;
-			if (!response.error) {
-				return {
-					count: response.count,
-					restaurants: response.restaurants,
-				};
+			const { count, restaurants, message, error } = response;
+			if (!error) {
+				return { count, restaurants };
 			}
-			return {
-				message: response.message,
-			};
+			return { message };
 		} catch (error) {
-			return {
-				message: 'Cek koneksi internet Anda!',
-				error,
-			};
+			const message = 'Cek koneksi internet Anda!';
+			return { message, error };
 		}
 	};
 }

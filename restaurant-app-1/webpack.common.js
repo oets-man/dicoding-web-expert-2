@@ -17,7 +17,7 @@ module.exports = {
 		rules: [
 			{
 				test: /\.s[ac]ss$/i,
-				exclude: /component/,
+				exclude: /components/,
 				use: [
 					// Creates `style` nodes from JS strings
 					'style-loader',
@@ -30,8 +30,14 @@ module.exports = {
 			{
 				// component
 				test: /\.css$/i,
-				include: /component/,
+				include: /components/,
 				use: ['to-string-loader', 'css-loader'],
+			},
+			{
+				// component
+				test: /\.html$/i,
+				include: /components/,
+				use: ['to-string-loader', 'html-loader'],
 			},
 		],
 	},
