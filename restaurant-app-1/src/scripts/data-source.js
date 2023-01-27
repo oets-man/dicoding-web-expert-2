@@ -23,4 +23,4 @@ class DataSource {
 	};
 }
 
-export default  DataSource ;
+export default DataSource;

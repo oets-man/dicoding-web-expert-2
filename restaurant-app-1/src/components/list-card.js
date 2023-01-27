@@ -58,24 +58,30 @@ class ListCard extends HTMLElement {
 			e.stopPropagation();
 			alert('Maaf. Fitur tampilkan detail masih dalam pengembangan!');
 		});
-		this.shadow.querySelector('#btn-detail').addEventListener('keypress', (e) => {
-			e.stopPropagation();
-			if (e.key === ' ') {
-				alert('Maaf. Fitur tampilkan detail masih dalam pengembangan!');
-			}
-		});
+		this.shadow
+			.querySelector('#btn-detail')
+			.addEventListener('keypress', (e) => {
+				e.stopPropagation();
+				if (e.key === ' ') {
+					alert('Maaf. Fitur tampilkan detail masih dalam pengembangan!');
+				}
+			});
 
 		// button favorite
-		this.shadow.querySelector('#btn-favorite').addEventListener('click', (e) => {
-			e.stopPropagation();
-			alert('Maaf. Fitur tambah ke favorit masih dalam pengembangan!');
-		});
-		this.shadow.querySelector('#btn-favorite').addEventListener('keypress', (e) => {
-			e.stopPropagation();
-			if (e.key === ' ') {
+		this.shadow
+			.querySelector('#btn-favorite')
+			.addEventListener('click', (e) => {
+				e.stopPropagation();
 				alert('Maaf. Fitur tambah ke favorit masih dalam pengembangan!');
-			}
-		});
+			});
+		this.shadow
+			.querySelector('#btn-favorite')
+			.addEventListener('keypress', (e) => {
+				e.stopPropagation();
+				if (e.key === ' ') {
+					alert('Maaf. Fitur tambah ke favorit masih dalam pengembangan!');
+				}
+			});
 	}
 }
 customElements.define('list-card', ListCard);

@@ -15,7 +15,6 @@ const main = () => {
 					list.item = restaurant;
 					container.appendChild(list);
 				}, 250 * index);
-
 			});
 		} catch (error) {
 			alert(error);
