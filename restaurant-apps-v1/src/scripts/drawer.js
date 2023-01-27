@@ -17,4 +17,4 @@ const drawer = () => {
 		drawer.classList.remove('open-nav');
 	});
 };
-export { drawer };
+export default  drawer ;
