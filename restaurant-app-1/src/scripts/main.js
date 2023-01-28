@@ -1,4 +1,4 @@
-import '../components/list-card';
+import '../components/card/list-card';
 import data from './data-source';
 import { URL_PICTURE } from '../config/url';
 

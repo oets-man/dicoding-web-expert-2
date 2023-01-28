@@ -11,7 +11,7 @@
 	animation: fadeIn 3s;
 }
 
-.item {
+.card {
 	background-color: #292d36;
 	width: 90%;
 	overflow-x: hidden;
@@ -23,7 +23,7 @@
 	border-radius: 5px;
 }
 
-.item:hover {
+.card:hover {
 	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
 	transform: scale(1.05);
 }
@@ -59,11 +59,11 @@ td {
 	vertical-align: top;
 }
 
-.item-name {
+.name {
 	font-variant: small-caps;
 }
 
-.description {
+.description-container {
 	display: none;
 }
 
@@ -74,14 +74,14 @@ td {
 	font-weight: 300;
 }
 
-.btn {
+.a-container {
 	display: flex;
 	flex-direction: row;
 	column-gap: 10px;
 	margin: 10px 0px;
 }
 
-#a-detail {
+.a-detail {
 	width: 100px;
 	height: 44px;
 	line-height: 44px;
@@ -93,8 +93,8 @@ td {
 	cursor: pointer;
 }
 
-#a-detail:hover,
-#a-detail:focus {
+.a-detail:hover,
+.a-detail:focus {
 	background-color: #e9e5d6;
 	font-weight: bold;
 }
