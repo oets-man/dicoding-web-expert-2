@@ -1,5 +1,5 @@
-import css from './list-card.css';
-import html from './list-card.html';
+import css from './style.css';
+import html from './template.html';
 
 class ListCard extends HTMLElement {
 	constructor() {
