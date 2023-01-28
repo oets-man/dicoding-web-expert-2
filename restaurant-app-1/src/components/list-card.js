@@ -36,8 +36,7 @@ class ListCard extends HTMLElement {
 				</div>
 				<div id="description" class="description">
 					<div class="btn">
-						<button id="btn-detail" aria-label="tampilkan detail restoran">Detail</button>
-						<button id="btn-favorite" aria-label="tambahkan ke favorit">Favorit</button>
+						<a id="a-detail" aria-label="tampilkan detail restoran" tabindex="0">Detail</a>
 					</div>
 					<p>${description}</p>
 				</div>
@@ -54,35 +53,18 @@ class ListCard extends HTMLElement {
 			}
 		});
 
-		// button detail
-		this.shadow.querySelector('#btn-detail').addEventListener('click', (e) => {
+		// detail
+		const toDetail = (e) => {
 			e.stopPropagation();
+			e.preventDefault();
 			alert('Maaf. Fitur tampilkan detail masih dalam pengembangan!');
-		});
+		};
 		this.shadow
-			.querySelector('#btn-detail')
-			.addEventListener('keypress', (e) => {
-				e.stopPropagation();
-				if (e.key === ' ') {
-					alert('Maaf. Fitur belum siap!');
-				}
-			});
-
-		// button favorite
+			.querySelector('#a-detail')
+			.addEventListener('click', (e) => toDetail(e));
 		this.shadow
-			.querySelector('#btn-favorite')
-			.addEventListener('click', (e) => {
-				e.stopPropagation();
-				alert('Maaf. Fitur belum siap!');
-			});
-		this.shadow
-			.querySelector('#btn-favorite')
-			.addEventListener('keypress', (e) => {
-				e.stopPropagation();
-				if (e.key === ' ') {
-					alert('Maaf. Fitur belum siap!');
-				}
-			});
+			.querySelector('#a-detail')
+			.addEventListener('keypress', (e) => toDetail(e));
 	}
 }
 customElements.define('list-card', ListCard);

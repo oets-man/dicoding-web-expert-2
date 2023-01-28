@@ -12,7 +12,7 @@
 }
 
 .item {
-	background-color: azure;
+	background-color: #292d36;
 	width: 90%;
 	overflow-x: hidden;
 	overflow-y: auto;
@@ -81,9 +81,11 @@ td {
 	margin: 10px 0px;
 }
 
-button {
+#a-detail {
 	width: 100px;
 	height: 44px;
+	line-height: 44px;
+	text-align: center;
 	color: #362706;
 	background-color: #d7e0c3;
 	border-radius: 5px;
@@ -91,8 +93,8 @@ button {
 	cursor: pointer;
 }
 
-button:hover,
-button:focus {
+#a-detail:hover,
+#a-detail:focus {
 	background-color: #e9e5d6;
 	font-weight: bold;
 }
