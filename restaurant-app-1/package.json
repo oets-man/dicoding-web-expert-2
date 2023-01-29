@@ -12,7 +12,7 @@
     "build-serve": "npm run build && npm run serve"
   },
   "keywords": [],
-  "author": "your_name <your.email@domain.com>",
+  "author": "Usman Husnan <oets.man@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.18.5",
@@ -42,13 +42,10 @@
     "webpack": "^5.75.0",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.9.2",
-    "webpack-merge": "^5.8.0",
-    "whatwg-fetch": "^3.6.2"
+    "webpack-merge": "^5.8.0"
   },
   "dependencies": {
     "alertifyjs": "^1.13.1",
-    "axios": "^1.2.0",
-    "regenerator-runtime": "^0.13.9",
     "to-string-loader": "^1.2.0"
   }
 }

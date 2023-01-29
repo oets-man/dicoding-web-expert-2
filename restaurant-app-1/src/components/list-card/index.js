@@ -14,13 +14,13 @@ class ListCard extends HTMLElement {
 	}
 
 	render() {
-		const { id, name, description, picture, city, rating } = this._item;
+		const { id, name, description, pictureId, city, rating } = this._item;
 		this.shadow.innerHTML = `
 			<style>${css}</style>
 			<div>${html}</div> 
 		`;
 		this.shadow.querySelector('.card').setAttribute('id', `restaurantId-${id}`);
-		this.shadow.querySelector('img').setAttribute('src', picture);
+		this.shadow.querySelector('img').setAttribute('src', pictureId);
 		this.shadow.querySelector('#name').innerText = name;
 		this.shadow.querySelector('#city').innerText = city;
 		this.shadow.querySelector('#rating').innerText = rating;
