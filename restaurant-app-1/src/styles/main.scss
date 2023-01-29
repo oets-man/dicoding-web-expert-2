@@ -175,20 +175,17 @@ body {
 		text-align: center;
 		.hero-title {
 			color: $light1;
-			text-shadow: 2px 2px 1px $dark1;
-			font-size: 1.8rem;
+			text-shadow: 2px 2px 3px $light2;
+			font-size: 1.6rem;
 			font-weight: 500;
 		}
 		.hero-subtitle {
+			text-shadow: 2px 2px 4px $light2;
+			font-variant: small-caps;
 			color: $light1;
-			font-size: 1rem;
+			font-size: 2rem;
 			font-weight: 300;
 			margin-top: 0.2rem;
-			span {
-				display: block;
-				font-variant: small-caps;
-				font-weight: 400;
-			}
 		}
 	}
 	@media screen and (min-width: $medium) {
@@ -200,7 +197,7 @@ body {
 				font-size: 2rem;
 			}
 			.hero-subtitle {
-				font-size: 1.3rem;
+				font-size: 2.5rem;
 			}
 		}
 	}
