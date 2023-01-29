@@ -14,12 +14,12 @@ const main = () => {
 				restaurant.picture = `${URL_PICTURE.SMALL}/${restaurant.pictureId}`;
 				const spinner = document.createElement('load-spinner');
 				const card = document.createElement('list-card');
-				card.item = restaurant;
 				setTimeout(() => {
 					container.appendChild(spinner);
+					container.appendChild(card);
 					setTimeout(() => {
-						container.appendChild(card);
 						container.removeChild(spinner);
+						card.item = restaurant;
 					}, 500);
 				}, 500 * index);
 			});
