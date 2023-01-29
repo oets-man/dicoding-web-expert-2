@@ -1,5 +1,6 @@
 import css from './style.css';
 import html from './template.html';
+import alertify from 'alertifyjs';
 
 class ListCard extends HTMLElement {
 	constructor() {
@@ -25,6 +26,8 @@ class ListCard extends HTMLElement {
 		this.shadow.querySelector('#rating').innerText = rating;
 		this.shadow.querySelector('#description').innerText = description;
 
+		this.createStar(rating);
+
 		// open description
 		const desc = this.shadow.querySelector('#description-container');
 		this.shadow.querySelector('.card').addEventListener('click', () => {
@@ -40,7 +43,7 @@ class ListCard extends HTMLElement {
 		const toDetail = (e) => {
 			e.stopPropagation();
 			e.preventDefault();
-			alert('Maaf. Fitur tampilkan detail masih dalam pengembangan!');
+			alertify.alert('Maaf', 'Fitur ini masih dalam pengembangan!');
 		};
 		this.shadow
 			.querySelector('#a-detail')
@@ -48,6 +51,24 @@ class ListCard extends HTMLElement {
 		this.shadow
 			.querySelector('#a-detail')
 			.addEventListener('keypress', (e) => toDetail(e));
+	}
+
+	createStar(rating) {
+		// https://www.youtube.com/watch?v=u3rylF3y3og&list=LL&index=1
+
+		// Get percentage
+		const starPercentage = (rating / 5) * 100;
+
+		// Round to nearest 10
+		const starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`;
+
+		// Set width of stars-inner to percentage
+		this.shadow.querySelector('.stars-inner').style.width =
+			starPercentageRounded;
+
+		// Add number rating
+		this.shadow.querySelector('.number-rating').innerHTML =
+			parseFloat(rating).toFixed(1);
 	}
 }
 customElements.define('list-card', ListCard);
