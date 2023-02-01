@@ -1,12 +1,12 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
+// const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const path = require('path');
 
 module.exports = {
   entry: {
     app: path.resolve(__dirname, 'src/scripts/index.js'),
-    // sw: path.resolve(__dirname, 'src/scripts/sw-native.js'),
+    sw: path.resolve(__dirname, 'src/scripts/sw-native.js'),
   },
   output: {
     filename: '[name].bundle.js',
@@ -41,8 +41,8 @@ module.exports = {
         },
       ],
     }),
-    new WorkboxWebpackPlugin.GenerateSW({
-      swDest: './sw.bundle.js',
-    }),
+    // new WorkboxWebpackPlugin.GenerateSW({
+    //   swDest: './sw.bundle.js',
+    // }),
   ],
 };

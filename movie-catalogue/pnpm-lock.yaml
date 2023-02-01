@@ -11,6 +11,7 @@ specifiers:
   eslint-plugin-import: ^2.27.5
   html-webpack-plugin: ^5.5.0
   http-server: ^14.1.1
+  idb: ^7.1.1
   regenerator-runtime: ^0.13.11
   style-loader: ^3.3.1
   webpack: ^5.75.0
@@ -21,6 +22,7 @@ specifiers:
   workbox-window: ^6.5.4
 
 dependencies:
+  idb: 7.1.1
   regenerator-runtime: 0.13.11
   workbox-window: 6.5.4
 
@@ -3323,7 +3325,6 @@ packages:
 
   /idb/7.1.1:
     resolution: {integrity: sha512-gchesWBzyvGHRO9W8tzUWFDycow5gwjvFKfyV9FF32Y7F50yZMp7mP+T2mJIWFx49zicqyC4uefHM17o6xKIVQ==}
-    dev: true
 
   /ignore/5.2.4:
     resolution: {integrity: sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==}
