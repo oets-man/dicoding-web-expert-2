@@ -1,5 +1,5 @@
 import alertify from 'alertifyjs';
-import createStar from '../../scripts/utils/create-star';
+import createStar from '../../utils/create-star';
 import css from './style.css';
 import html from './template.html';
 

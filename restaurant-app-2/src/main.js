@@ -1,8 +1,8 @@
-import '../components/list-card';
-import '../components/load-spinner';
+import './components/list-card';
+import './components/load-spinner';
 import alertify from 'alertifyjs';
-import data from './data-source';
-import { URL_PICTURE } from '../config/url';
+import data from './data/data-source';
+import { URL_PICTURE } from './config/url';
 
 const main = () => {
 	const container = document.querySelector('#card-container');
