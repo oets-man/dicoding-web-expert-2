@@ -1,49 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="description" content="Aplikasi pencarian dan review warung Nusantara">
-				<link
-		rel="stylesheet"
-		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+	<link rel="manifest" href="./app.webmanifest">
+	<meta name="theme-color" content="#292d36"/>
+	<meta name="description" content="Aplikasi pencarian dan review warung Nusantara">
+	<link rel="apple-touch-icon" href="./icons/maskable_icon_x192.png">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
 		integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-		crossorigin="anonymous"
-		referrerpolicy="no-referrer"
-	/>
-		<title>Kuliner Nusantara</title>
-	</head>
-	<body>
-		<a href="#maincontent" class="skip-link">Menuju ke konten utama</a>
-		<header>
-			<section class="sticky">
-				<div class="inner">
-					<button aria-label="tampilkan navigasi" class="menu" id="menu">☰</button>
-					<h1 class="title">Review Warung Nusantara</h1>
-				</div>
-				<nav id="drawer">
-					<ul>
-						<li><a href="/">Beranda</a></li>
-						<li><a href="#">Favorit</a></li>
-						<li><a href="https://facebook.com/oets.man" target="_blank">Tentang</a></li>
-					</ul>
-				</nav>
-			</section>
-			<section class="hero">
-				<img src="./images/hero.jpg" alt="gambar hero" />
-				<div class="hero-content">
-					<p class="hero-title">Cita Rasa</p>
-					<p class="hero-subtitle">Kuliner Nusantara</p>
-				</div>
-			</section>
-		</header>
-		<main id="maincontent" tabindex="0">
-			<h2>Daftar Warung Nusantara</h2>
-			<div class="container" id="card-container"></div>
-		</main>
-		<footer>
-			<p>by oets @2023</p>
-		</footer>
-	</body>
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<title>Kuliner Nusantara</title>
+</head>
+
+<body>
+	<a href="#maincontent" class="skip-link">Menuju ke konten utama</a>
+	<header>
+		<section class="sticky">
+			<div class="inner">
+				<button aria-label="tampilkan navigasi" class="menu" id="menu">☰</button>
+				<h1 class="title">Review Warung Nusantara</h1>
+			</div>
+			<nav id="drawer">
+				<ul>
+					<li><a href="/">Beranda</a></li>
+					<li><a href="#">Favorit</a></li>
+					<li><a href="https://facebook.com/oets.man" target="_blank">Tentang</a></li>
+				</ul>
+			</nav>
+		</section>
+		<section class="hero">
+			<img src="./images/hero.jpg" alt="gambar hero" />
+			<div class="hero-content">
+				<p class="hero-title">Cita Rasa</p>
+				<p class="hero-subtitle">Kuliner Nusantara</p>
+			</div>
+		</section>
+	</header>
+	<main id="maincontent" tabindex="0">
+		<h2>Daftar Warung Nusantara</h2>
+		<div class="container" id="card-container"></div>
+	</main>
+	<footer>
+		<p>by oets @2023</p>
+	</footer>
+</body>
+
 </html>
