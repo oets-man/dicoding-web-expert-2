@@ -1,10 +1,9 @@
 import api from '../config/api';
 
-class DataSource {
+class dataApi {
 	static getRestaurant = async () => {
 		const get = await api.get('list');
-		const response = get.data;
-		const { count, restaurants, message, error } = response;
+		const { count, restaurants, message, error } = get.data;
 		if (error) {
 			return {
 				message,
@@ -17,4 +16,4 @@ class DataSource {
 	};
 }
 
-export default DataSource;
+export default dataApi;
