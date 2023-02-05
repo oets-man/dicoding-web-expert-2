@@ -4,6 +4,6 @@ import drawer from './drawer';
 import main from './main';
 
 document.addEventListener('DOMContentLoaded', () => {
-  drawer();
-  main();
+	drawer();
+	main();
 });

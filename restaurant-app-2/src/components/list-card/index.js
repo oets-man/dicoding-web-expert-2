@@ -1,71 +1,61 @@
 import alertify from 'alertifyjs';
-import { URL_PICTURE } from '../../config/url';
+import createStar from '../../scripts/utils/create-star';
 import css from './style.css';
 import html from './template.html';
 
 class ListCard extends HTMLElement {
-  constructor() {
-    super();
-    this.shadow = this.attachShadow({ mode: 'open' });
-  }
+	constructor() {
+		super();
+		this.shadow = this.attachShadow({ mode: 'open' });
+	}
 
-  set item(item) {
-    this.items = item;
-    this.render();
-  }
+	set item(restaurant) {
+		this._item = restaurant;
+		this.render();
+	}
 
-  render() {
-    const {
-      id, name, description, pictureId, city, rating,
-    } = this.items;
-    this.shadow.innerHTML = `
+	render() {
+		const { id, name, description, urlPicture, city, rating } = this._item;
+		this.shadow.innerHTML = `
 			<style>${css}</style>
-			<div>${html}</div> 
+			<div>${html}</div>
 		`;
-    this.shadow.querySelector('.card').setAttribute('id', `restaurantId-${id}`);
-    this.shadow.querySelector('img').setAttribute('src', `${URL_PICTURE.SMALL}/${pictureId}`);
-    this.shadow.querySelector('#name').innerText = name;
-    this.shadow.querySelector('#city').innerText = city;
-    this.shadow.querySelector('#rating').innerText = rating;
-    this.shadow.querySelector('#description').innerText = description;
+		this.shadow.querySelector('.card').setAttribute('id', `restaurantId-${id}`);
+		this.shadow.querySelector('img').setAttribute('src', urlPicture);
+		this.shadow.querySelector('#name').innerText = name;
+		this.shadow.querySelector('#city').innerText = city;
+		this.shadow.querySelector('#description').innerText = description;
 
-    this.createStar(rating);
+		createStar({
+			rating: rating,
+			starElement: this.shadow.querySelector('#stars-inner'),
+			ratingElement: this.shadow.querySelector('#number-rating'),
+		});
 
-    // open description
-    const desc = this.shadow.querySelector('#description-container');
-    this.shadow.querySelector('.card').addEventListener('click', () => {
-      desc.classList.toggle('open');
-    });
-    this.shadow.querySelector('.card').addEventListener('keypress', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        desc.classList.toggle('open');
-      }
-    });
+		// open description
+		const desc = this.shadow.querySelector('#description-container');
+		this.shadow.querySelector('.card').addEventListener('click', () => {
+			desc.classList.toggle('open');
+		});
+		this.shadow.querySelector('.card').addEventListener('keypress', (e) => {
+			if (e.key === 'Enter' || e.key === ' ') {
+				desc.classList.toggle('open');
+			}
+		});
 
-    // detail
-    const toDetail = (e) => {
-      e.stopPropagation();
-      e.preventDefault();
-      alertify.alert('Maaf', 'Fitur ini masih dalam pengembangan!');
-    };
-    this.shadow.querySelector('#a-detail').addEventListener('click', (e) => toDetail(e));
-    this.shadow.querySelector('#a-detail').addEventListener('keypress', (e) => toDetail(e));
-  }
+		// detail
+		this.shadow
+			.querySelector('#a-detail')
+			.addEventListener('click', (e) => this.goToDetail(e));
+		this.shadow
+			.querySelector('#a-detail')
+			.addEventListener('keypress', (e) => this.goToDetail(e));
+	}
 
-  createStar(rating) {
-    // https://www.youtube.com/watch?v=u3rylF3y3og&list=LL&index=1
-
-    // Get percentage
-    const starPercentage = (rating / 5) * 100;
-
-    // Round to nearest 10
-    const starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`;
-
-    // Set width of stars-inner to percentage
-    this.shadow.querySelector('.stars-inner').style.width = starPercentageRounded;
-
-    // Add number rating
-    this.shadow.querySelector('.number-rating').innerHTML = parseFloat(rating).toFixed(1);
-  }
+	goToDetail = (e) => {
+		e.stopPropagation();
+		e.preventDefault();
+		alertify.alert('Maaf', 'Fitur ini masih dalam pengembangan!');
+	};
 }
 customElements.define('list-card', ListCard);
