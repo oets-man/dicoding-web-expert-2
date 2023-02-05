@@ -21,11 +21,20 @@ class App {
 		});
 	}
 
+	_skipLink() {
+		const skipLinkElement = document.querySelector('#skip-link');
+		skipLinkElement.addEventListener('click', (event) => {
+			event.preventDefault();
+			this._main.focus();
+		});
+	}
+
 	async renderPage() {
 		const url = UrlParser.parseActiveUrlWithCombiner();
 		const page = routes[url];
 		await page.renderHeader();
 		await page.renderContent();
+		this._skipLink();
 	}
 }
 
