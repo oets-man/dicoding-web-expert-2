@@ -2,8 +2,8 @@ const Favorite = {
 	async renderHeader() {
 		const hero = document.querySelector('#hero');
 		hero.innerHTML = `
-			<img src="./images/hero.jpg" alt="gambar hero" />
-			<div class="hero-content">
+			<img src="./images/hero.jpg" alt="gambar hero" id="hero-img" />;
+			<div class="hero-content" id="hero-content">
 				<p class="hero-title">Cita Rasa</p>
 				<p class="hero-subtitle">Kuliner Nusantara</p>
 			</div>

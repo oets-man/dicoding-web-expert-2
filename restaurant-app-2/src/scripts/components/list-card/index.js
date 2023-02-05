@@ -1,4 +1,3 @@
-import alertify from 'alertifyjs';
 import createStar from '../../utils/create-star';
 import css from './style.css';
 import html from './template.html';
@@ -25,6 +24,9 @@ class ListCard extends HTMLElement {
 		this.shadow.querySelector('#name').innerText = name;
 		this.shadow.querySelector('#city').innerText = city;
 		this.shadow.querySelector('#description').innerText = description;
+		this.shadow
+			.querySelector('#a-detail')
+			.setAttribute('href', `#/detail/${id}`);
 
 		createStar({
 			rating: rating,
@@ -42,20 +44,6 @@ class ListCard extends HTMLElement {
 				desc.classList.toggle('open');
 			}
 		});
-
-		// detail
-		this.shadow
-			.querySelector('#a-detail')
-			.addEventListener('click', (e) => this.goToDetail(e));
-		this.shadow
-			.querySelector('#a-detail')
-			.addEventListener('keypress', (e) => this.goToDetail(e));
 	}
-
-	goToDetail = (e) => {
-		e.stopPropagation();
-		e.preventDefault();
-		alertify.alert('Maaf', 'Fitur ini masih dalam pengembangan!');
-	};
 }
 customElements.define('list-card', ListCard);
