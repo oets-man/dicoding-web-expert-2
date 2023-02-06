@@ -77,7 +77,7 @@ const Detail = {
 
 			this._handleClickReview(document.querySelector('#form-review'));
 		} catch (error) {
-			alert(error.message);
+			alertify.alert('Ops...', error.message);
 		}
 	},
 
