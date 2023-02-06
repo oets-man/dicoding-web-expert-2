@@ -15,6 +15,7 @@ class dataApi {
 			restaurants,
 		};
 	};
+
 	static getRestaurant = async (id) => {
 		const get = await api.get(URL.DETAIL(id));
 		const { restaurant, message, error } = get.data;
@@ -26,6 +27,19 @@ class dataApi {
 		return {
 			restaurant,
 		};
+	};
+
+	static addReview = async (data) => {
+		const config = {
+			method: 'post',
+			url: URL.REVIEW,
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			data: data,
+		};
+		const review = await api(config);
+		return review.data;
 	};
 }
 

@@ -23,6 +23,7 @@ body {
 	margin: 0 auto;
 	background-color: $dark1;
 	color: $light1;
+
 	.skip-link {
 		margin: auto;
 		position: absolute;
@@ -32,6 +33,7 @@ body {
 		padding: 8px;
 		z-index: 100;
 	}
+
 	.skip-link:focus {
 		top: 0;
 	}
@@ -42,6 +44,7 @@ body {
 	position: sticky;
 	top: 0;
 	z-index: 1;
+
 	.inner {
 		display: flex;
 		flex-direction: row;
@@ -49,6 +52,7 @@ body {
 		color: $light1;
 		background-color: $dark2;
 		height: 50px;
+
 		.menu {
 			padding: 0 10px;
 			font-size: 2em;
@@ -58,22 +62,27 @@ body {
 			height: 50px;
 			width: 50px;
 			cursor: pointer;
+
 			& :hover {
 				background-color: $light3;
 				color: $light1;
 			}
 		}
+
 		.title {
 			font-size: 1.5em;
 			font-weight: normal;
 		}
+
 		@media screen and (min-width: $medium) {
 			& {
 				flex-direction: column;
 			}
+
 			.title {
 				line-height: 50px;
 			}
+
 			.menu {
 				display: none;
 			}
@@ -88,8 +97,10 @@ body {
 		-webkit-transform: translate(-250px, 0);
 		transform: translate(-250px, 0);
 		transition: transform 0.3s ease;
+
 		ul {
 			display: grid;
+
 			li {
 				border-bottom: 1px solid $light2;
 				width: 100%;
@@ -97,6 +108,7 @@ body {
 				padding: 0 10px;
 				height: 70px;
 				line-height: 70px;
+
 				a {
 					padding: 20px 100px 20px 0;
 				}
@@ -106,21 +118,25 @@ body {
 					text-decoration: none;
 					cursor: pointer;
 				}
+
 				a {
 					color: $light1;
 					text-decoration: none;
 					cursor: pointer;
 				}
+
 				&:hover {
 					font-weight: bold;
 					background-color: $light3;
 				}
 			}
 		}
+
 		&.open-nav {
 			-webkit-transform: translate(0, 0);
 			transform: translate(0, 0);
 		}
+
 		@media screen and (min-width: $medium) {
 			position: static;
 			-webkit-transform: translate(0, 0);
@@ -129,18 +145,21 @@ body {
 			width: 100%;
 			margin: 0 auto;
 			background-color: $dark1;
+
 			ul {
 				grid-template-columns: 1fr 1fr 1fr;
 				flex-direction: column;
 				justify-content: center;
 				max-width: 600px;
 				margin: auto;
+
 				li {
 					display: inline;
 					text-align: center;
 					height: 44px;
 					line-height: 44px;
 					border: 0;
+
 					a {
 						padding: 15px 50px;
 					}
@@ -160,6 +179,7 @@ body {
 	height: 35vh;
 	justify-content: center;
 	align-items: center;
+
 	img {
 		display: block;
 		position: relative;
@@ -168,6 +188,7 @@ body {
 		object-fit: cover;
 		object-position: center;
 	}
+
 	.hero-content {
 		width: 100%;
 		padding: 5px;
@@ -175,16 +196,20 @@ body {
 		position: absolute;
 		margin: auto;
 		text-align: center;
+
 		.hero-title {
 			color: $light1;
 			// text-shadow: 2px 2px 0px $light2;
 			font-style: italic;
 			font-size: 1.6rem;
 			font-weight: 500;
-			&::before, &::after{
+
+			&::before,
+			&::after {
 				content: '~';
 			}
 		}
+
 		.hero-subtitle {
 			text-shadow: 2px 2px 4px $light2;
 			font-variant: small-caps;
@@ -194,22 +219,106 @@ body {
 			margin-top: 0.2rem;
 		}
 	}
+
 	@media screen and (min-width: $medium) {
 		& {
 			height: 50vh;
 		}
+
 		.hero-content {
 			.hero-title {
 				font-size: 2rem;
 			}
+
 			.hero-subtitle {
 				font-size: 2.5rem;
 			}
 		}
 	}
 }
+
+.favorite-container {
+	width: 100%;
+	position: absolute;
+	bottom: 20px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+
+	.rating {
+		position: absolute;
+		left: 0px;
+		bottom: 7.5px;
+		padding: 0 20px;
+
+		height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: $dark2;
+		box-shadow: 0.5px 0.5px 2px $light2;
+
+		.stars-outer {
+			position: relative;
+			display: inline-block;
+		}
+
+		.stars-inner {
+			position: absolute;
+			top: 0;
+			left: 0;
+			white-space: nowrap;
+			overflow: hidden;
+			width: 0;
+		}
+
+		.stars-outer::before {
+			content: '\f005 \f005 \f005 \f005 \f005';
+			font-family: 'Font Awesome 6 Free';
+			font-weight: 300;
+			color: #ccc;
+		}
+
+		.stars-inner::before {
+			content: '\f005 \f005 \f005 \f005 \f005';
+			font-family: 'Font Awesome 6 Free';
+			font-weight: 900;
+			color: #f8ce0b;
+		}
+
+		.number-rating {
+			margin-left: 10px;
+		}
+	}
+
+	.favorite-btn {
+		position: absolute;
+		right: 20px;
+		bottom: 0px;
+
+		width: 55px;
+		height: 55px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: $dark2;
+		box-shadow: 0.5px 0.5px 3px $light2;
+
+		//   position: fixed;
+		border-radius: 50%;
+		border: 0;
+
+		font-size: 18px;
+		color: $light1;
+		cursor: pointer;
+		&:hover{
+			background-color: $dark1;
+		}
+	}
+}
+
 main {
 	background-color: $dark1;
+
 	h2 {
 		padding: 10px 5px;
 		border-bottom: 1px $light1 solid;
@@ -220,26 +329,163 @@ main {
 		margin-bottom: 5px;
 	}
 
+	.address,
+	.categories {
+		text-align: center;
+		// margin: 10px 0;
+	}
+
 	.container {
 		display: grid;
 		grid-template-columns: 1fr;
 		justify-content: center;
+
 		list-card {
 			justify-self: center;
 			text-align: center;
 			width: 100%;
 			max-width: 500px;
 		}
+
 		@media screen and (min-width: $medium) {
 			grid-template-columns: 1fr 1fr;
 			justify-content: space-evenly;
 			width: 95%;
 			margin: auto;
 		}
+
 		@media screen and (min-width: $large) {
 			grid-template-columns: 1fr 1fr 1fr;
 		}
 	}
+}
+
+.detail-restaurant {
+	display: grid;
+	grid-template-columns: 1fr;
+	max-width: 1000px;
+	margin: auto;
+
+	h3 {
+		font-weight: 400;
+	}
+
+	.foods,
+	.drinks,
+	.description {
+		padding: 20px;
+		text-align: justify;
+	}
+
+	@media screen and (min-width:$medium) {
+		grid-template-columns: 1fr 1fr;
+
+	}
+}
+
+.reviews-container {
+	h3 {
+		padding: 10px 5px;
+		border-bottom: 1px $light1 solid;
+		border-top: 1px $light1 solid;
+		text-align: center;
+		font-weight: 300;
+		font-size: 1.2em;
+		margin-bottom: 5px;
+	}
+
+	.reviews {
+		padding: 20px;
+		max-width: 1200px;
+		margin: auto;
+
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 20px;
+
+		@media screen and (min-width:$medium) {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@media screen and (min-width:$large) {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+
+		.card-review {
+			padding: 10px;
+			background-color: $dark2;
+			text-align: start;
+			width: 100%;
+			max-width: 500px;
+			box-shadow: 0 2px 4px 0 $light3;
+
+			div {
+				margin-top: 5px;
+				font-style: italic;
+				font-weight: 100;
+			}
+		}
+	}
+}
+
+.add-reviews {
+	h3 {
+		padding: 10px 5px;
+		border-bottom: 1px $light1 solid;
+		border-top: 1px $light1 solid;
+		text-align: center;
+		font-weight: 300;
+		font-size: 1.2em;
+		margin-bottom: 5px;
+	}
+	
+	form {
+		margin: auto;
+		padding: 0 20px;
+		width: 100%;
+		max-width: 700px;
+		color: $light1;
+		input, label, textarea {
+			display: block;
+			width: 100%;
+		}
+		label{
+			margin-top: 20px;
+			margin-bottom: 5px;
+		}
+		input{
+			height: 44px;
+			line-height: 44px;
+		}
+		input, textarea{
+			padding: 10px;
+			font-size: 1em;
+		}
+		.buttons {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			width: 100%;
+			align-content: space-around;
+			column-gap: 20px;
+			padding: 20px 0;
+
+			button {
+				cursor: pointer;
+				border: none;
+				line-height: 50px;
+				height: 50px;
+				background-color: $light3;
+				box-shadow: none;
+				border-radius: 5px;
+				font-size: 1em;
+				&:hover{
+					background-color: $light2;
+					font-weight: 700;
+				}
+			}
+		}
+	}
+
 }
 
 footer {
