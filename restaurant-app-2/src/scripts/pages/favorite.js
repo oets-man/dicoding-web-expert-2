@@ -1,3 +1,6 @@
+import parsingListRestaurants from '../components/template-creator/list-restaurants';
+import dataIdb from '../data/data-idb';
+
 const Favorite = {
 	async renderHeader() {
 		const hero = document.querySelector('#hero');
@@ -17,7 +20,9 @@ const Favorite = {
 	},
 
 	async renderContent() {
-		console.log('Fungsi ini akan dipanggil setelah ');
+		const restaurants = await dataIdb.getAllRestaurants();
+		const container = document.querySelector('#card-container');
+		parsingListRestaurants(container, restaurants);
 	},
 };
 export default Favorite;

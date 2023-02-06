@@ -13,10 +13,8 @@
 
 .card {
 	background-color: #292d36;
-	width: 90%;
 	overflow-x: hidden;
 	overflow-y: auto;
-	margin: 10px auto;
 	padding: 10px;
 	box-shadow: 0 2px 4px 0#acb992;
 	transition: 0.3s;

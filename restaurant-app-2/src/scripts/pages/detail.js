@@ -3,6 +3,7 @@ import dataApi from '../data/data-api';
 import UrlParser from '../routes/url-parser';
 import createStar from '../utils/create-star';
 import alertify from 'alertifyjs';
+import FavoriteButtonInitiator from '../utils/favorite-button-initiator';
 
 const Detail = {
 	async renderHeader() {
@@ -16,9 +17,7 @@ const Detail = {
 					</div>
 					<span class="number-rating" id="number-rating">0.0</span>
 				</div>
-				<button aria-label="favoritkan restorant ini" id="btn-favorite" class="favorite-btn">
-					<i class="fa-regular fa-heart" aria-hidden="true"></i>
-				</button>
+				<div id="favorite-button-container"></div>
 			</div>
 		`;
 
@@ -76,6 +75,13 @@ const Detail = {
 			createStar({ rating, starElement, ratingElement });
 
 			this._handleClickReview(document.querySelector('#form-review'));
+
+			FavoriteButtonInitiator.init({
+				favoriteButtonContainer: document.querySelector(
+					'#favorite-button-container'
+				),
+				restaurant,
+			});
 		} catch (error) {
 			alertify.alert('Ops...', error.message);
 		}

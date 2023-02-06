@@ -339,23 +339,25 @@ main {
 		display: grid;
 		grid-template-columns: 1fr;
 		justify-content: center;
+		max-width: 1600px;
+		margin: auto;
+		gap: 20px;
+		padding: 20px;
+		padding-top: 10px;
+	
+		@media screen and (min-width: $medium) {
+			grid-template-columns: 1fr 1fr;
+		}
+		
+		@media screen and (min-width: $large) {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
 
 		list-card {
 			justify-self: center;
 			text-align: center;
 			width: 100%;
 			max-width: 500px;
-		}
-
-		@media screen and (min-width: $medium) {
-			grid-template-columns: 1fr 1fr;
-			justify-content: space-evenly;
-			width: 95%;
-			margin: auto;
-		}
-
-		@media screen and (min-width: $large) {
-			grid-template-columns: 1fr 1fr 1fr;
 		}
 	}
 }

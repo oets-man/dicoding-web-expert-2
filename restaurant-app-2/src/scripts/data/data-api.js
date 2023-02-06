@@ -2,7 +2,7 @@ import api from '../config/api';
 import URL from '../config/url';
 
 class dataApi {
-	static getRestaurants = async () => {
+	static getAllRestaurants = async () => {
 		const get = await api.get('list');
 		const { count, restaurants, message, error } = get.data;
 		if (error) {

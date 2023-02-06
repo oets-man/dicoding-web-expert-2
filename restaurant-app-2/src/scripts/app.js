@@ -35,6 +35,7 @@ class App {
 		await page.renderHeader();
 		await page.renderContent();
 		this._skipLink();
+		this._drawer.classList.remove('open-nav');
 	}
 }
 

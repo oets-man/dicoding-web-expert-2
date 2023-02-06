@@ -1,8 +1,6 @@
-import '../components/list-card';
-import '../components/load-spinner';
 import alertify from 'alertifyjs';
 import dataApi from '../data/data-api';
-import URL from '../config/url';
+import parsingListRestaurants from '../components/template-creator/list-restaurants';
 
 const Home = {
 	async renderHeader() {
@@ -23,26 +21,14 @@ const Home = {
 	},
 
 	async renderContent() {
-		const container = document.querySelector('#card-container');
 		try {
-			const results = await dataApi.getRestaurants();
+			const results = await dataApi.getAllRestaurants();
 			if (results.error) {
 				return alertify.alert('Ops... #1', results.message);
 			}
 			const { restaurants } = results;
-			restaurants.forEach((restaurant, index) => {
-				restaurant.urlPicture = `${URL.PICTURE.SMALL}/${restaurant.pictureId}`;
-				const spinner = document.createElement('load-spinner');
-				const card = document.createElement('list-card');
-				setTimeout(() => {
-					container.appendChild(spinner);
-					container.appendChild(card);
-					setTimeout(() => {
-						container.removeChild(spinner);
-						card.item = restaurant;
-					}, 500);
-				}, 500 * index);
-			});
+			const container = document.querySelector('#card-container');
+			parsingListRestaurants(container, restaurants);
 		} catch (error) {
 			alertify.alert('Ops... #2', error.message);
 		}
