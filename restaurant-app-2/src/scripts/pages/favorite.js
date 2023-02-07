@@ -20,9 +20,21 @@ const Favorite = {
 	},
 
 	async renderContent() {
-		const restaurants = await dataIdb.getAllRestaurants();
 		const container = document.querySelector('#card-container');
-		parsingListRestaurants(container, restaurants);
+		try {
+			const restaurants = await dataIdb.getAllRestaurants();
+			if (restaurants.length == 0) {
+				container.innerHTML += `
+					<p role='alert' class='no-restaurant'>Belum ada warung yang difavoritkan. <br/>Silakan favoritkan beberapa warung!</p>
+				`;
+				return;
+			}
+			parsingListRestaurants(container, restaurants);
+		} catch (error) {
+			container.innerHTML += `
+				<p role='alert' class='no-restaurant'>Terjadi keasalahan.<br/>${error}</p>
+			`;
+		}
 	},
 };
 export default Favorite;

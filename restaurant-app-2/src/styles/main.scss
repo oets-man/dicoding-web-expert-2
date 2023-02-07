@@ -310,7 +310,8 @@ body {
 		font-size: 18px;
 		color: $light1;
 		cursor: pointer;
-		&:hover{
+
+		&:hover {
 			background-color: $dark1;
 		}
 	}
@@ -344,11 +345,11 @@ main {
 		gap: 20px;
 		padding: 20px;
 		padding-top: 15px;
-	
+
 		@media screen and (min-width: $medium) {
 			grid-template-columns: 1fr 1fr;
 		}
-		
+
 		@media screen and (min-width: $large) {
 			grid-template-columns: 1fr 1fr 1fr;
 		}
@@ -440,29 +441,37 @@ main {
 		font-size: 1.2em;
 		margin-bottom: 5px;
 	}
-	
+
 	form {
 		margin: auto;
 		padding: 0 20px;
 		width: 100%;
 		max-width: 700px;
 		color: $light1;
-		input, label, textarea {
+
+		input,
+		label,
+		textarea {
 			display: block;
 			width: 100%;
 		}
-		label{
+
+		label {
 			margin-top: 20px;
 			margin-bottom: 5px;
 		}
-		input{
+
+		input {
 			height: 44px;
 			line-height: 44px;
 		}
-		input, textarea{
+
+		input,
+		textarea {
 			padding: 10px;
 			font-size: 1em;
 		}
+
 		.buttons {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
@@ -480,7 +489,8 @@ main {
 				box-shadow: none;
 				border-radius: 5px;
 				font-size: 1em;
-				&:hover{
+
+				&:hover {
 					background-color: $light2;
 					font-weight: 700;
 				}
@@ -488,6 +498,20 @@ main {
 		}
 	}
 
+}
+
+.no-restaurant {
+	font-size: 1.3em;
+	padding: 10px;
+	margin: 20px;
+	text-align: center;
+	border: 1px solid $light2;
+	box-shadow: 1px 1px 5px $light1;
+	background-color: $light2;
+	color: $dark2;
+	border-radius: 5px;
+	grid-column-start: 1;
+	grid-column-end: 4;
 }
 
 footer {
