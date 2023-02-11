@@ -2,15 +2,15 @@ class FavoriteMovieShowPresenter {
   constructor({ view, favoriteMovies }) {
     this._view = view;
     this._favoriteMovies = favoriteMovies;
-    this._showFavoriteMovies();
+    this.#showFavoriteMovies();
   }
 
-  async _showFavoriteMovies() {
+  async #showFavoriteMovies() {
     const movies = await this._favoriteMovies.getAllMovies();
-    this._displayMovies(movies);
+    this.#displayMovies(movies);
   }
 
-  _displayMovies(movies) {
+  #displayMovies(movies) {
     this._view.showFavoriteMovies(movies);
   }
 }

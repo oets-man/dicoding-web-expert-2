@@ -1,17 +1,17 @@
 class FavoriteMovieSearchPresenter {
   constructor({ favoriteMovies, view }) {
     this._view = view;
-    this._listenToSearchRequestByUser();
+    this.#listenToSearchRequestByUser();
     this._favoriteMovies = favoriteMovies;
   }
 
-  _listenToSearchRequestByUser() {
+  #listenToSearchRequestByUser() {
     this._view.runWhenUserIsSearching((latestQuery) => {
-      this._searchMovies(latestQuery);
+      this.#searchMovies(latestQuery);
     });
   }
 
-  async _searchMovies(latestQuery) {
+  async #searchMovies(latestQuery) {
     this._latestQuery = latestQuery.trim();
     let foundMovies;
 
@@ -20,10 +20,10 @@ class FavoriteMovieSearchPresenter {
     } else {
       foundMovies = await this._favoriteMovies.getAllMovies();
     }
-    this._showFoundMovies(foundMovies);
+    this.#showFoundMovies(foundMovies);
   }
 
-  _showFoundMovies(movies) {
+  #showFoundMovies(movies) {
     this._view.showFavoriteMovies(movies);
   }
 

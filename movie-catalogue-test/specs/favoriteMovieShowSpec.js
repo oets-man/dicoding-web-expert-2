@@ -16,11 +16,7 @@ describe('Showing all favorite movies -- ', () => {
   describe('When no movies have been liked -- ', () => {
     it('should ask for the favorite movies', () => {
       const favoriteMovies = spyOnAllFunctions(FavoriteMovieIdb);
-      // eslint-disable-next-line no-new
-      new FavoriteMovieShowPresenter({
-        view,
-        favoriteMovies,
-      });
+      new FavoriteMovieShowPresenter({ view, favoriteMovies });
       expect(favoriteMovies.getAllMovies).toHaveBeenCalledTimes(1);
     });
 
@@ -33,11 +29,7 @@ describe('Showing all favorite movies -- ', () => {
       const favoriteMovies = spyOnAllFunctions(FavoriteMovieIdb);
       favoriteMovies.getAllMovies.and.returnValues([]);
 
-      // eslint-disable-next-line no-new
-      new FavoriteMovieShowPresenter({
-        view,
-        favoriteMovies,
-      });
+      new FavoriteMovieShowPresenter({ view, favoriteMovies });
     });
   });
 
@@ -56,11 +48,7 @@ describe('Showing all favorite movies -- ', () => {
           id: 22, title: 'B', vote_average: 4, overview: 'Sebuah film B',
         },
       ]);
-      // eslint-disable-next-line no-new
-      new FavoriteMovieShowPresenter({
-        view,
-        favoriteMovies,
-      });
+      new FavoriteMovieShowPresenter({ view, favoriteMovies });
     });
   });
 });

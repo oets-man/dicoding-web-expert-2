@@ -24,13 +24,13 @@ class FavoriteMovieSearchView {
     if (movies.length) {
       html = movies.reduce((carry, movie) => carry.concat(createMovieItemTemplate(movie)), '');
     } else {
-      html = this._getEmptyMovieTemplate();
+      html = this.#getEmptyMovieTemplate();
     }
     document.getElementById('movies').innerHTML = html;
     document.getElementById('movies').dispatchEvent(new Event('movies:updated'));
   }
 
-  _getEmptyMovieTemplate() {
+  #getEmptyMovieTemplate() {
     return '<div class="movie-item__not__found">Tidak ada film untuk ditampilkan</div>';
   }
 }
