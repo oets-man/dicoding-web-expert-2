@@ -1,5 +1,5 @@
 import alertify from 'alertifyjs';
-import dataApi from '../data/data-api';
+import dataApi from '../data/restaurants-api';
 import parsingListRestaurants from '../components/template-creator/list-restaurants';
 
 const Home = {

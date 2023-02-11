@@ -1,4 +1,3 @@
-import dataIdb from '../data/data-idb';
 import {
 	templateButtonFavorite,
 	templateButtonUnfavorite,
@@ -6,9 +5,10 @@ import {
 import alertify from 'alertifyjs';
 
 const FavoriteButtonPresenter = {
-	async init({ favoriteButtonContainer, restaurant }) {
+	async init({ favoriteButtonContainer, favoriteRestaurants, restaurant }) {
 		this._favoriteButtonContainer = favoriteButtonContainer;
 		this._restaurant = restaurant;
+		this._favoriteRestaurants = favoriteRestaurants;
 
 		await this._renderButton();
 	},
@@ -24,7 +24,7 @@ const FavoriteButtonPresenter = {
 	},
 
 	async _isExist(id) {
-		const restaurant = await dataIdb.getRestaurant(id);
+		const restaurant = await this._favoriteRestaurants.getRestaurant(id);
 		return !!restaurant;
 	},
 
@@ -32,7 +32,7 @@ const FavoriteButtonPresenter = {
 		this._favoriteButtonContainer.innerHTML = templateButtonUnfavorite();
 		const button = document.querySelector('#btn-favorite');
 		button.addEventListener('click', async () => {
-			await dataIdb.deleteRestaurant(this._restaurant.id);
+			await this._favoriteRestaurants.deleteRestaurant(this._restaurant.id);
 			this._renderButton();
 			alertify.warning('Dihapus dari daftar favorit');
 		});
@@ -42,7 +42,7 @@ const FavoriteButtonPresenter = {
 		this._favoriteButtonContainer.innerHTML = templateButtonFavorite();
 		const button = document.querySelector('#btn-favorite');
 		button.addEventListener('click', async () => {
-			await dataIdb.putRestaurant(this._restaurant);
+			await this._favoriteRestaurants.putRestaurant(this._restaurant);
 			this._renderButton();
 			alertify.success('Ditambahkan ke daftar favorit');
 		});

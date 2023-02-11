@@ -1,7 +1,7 @@
 import api from '../config/api';
 import URL from '../config/url';
 
-class dataApi {
+class RestaurantsApi {
 	static getAllRestaurants = async () => {
 		const get = await api.get('list');
 		const { count, restaurants, message, error } = get.data;
@@ -43,4 +43,4 @@ class dataApi {
 	};
 }
 
-export default dataApi;
+export default RestaurantsApi;

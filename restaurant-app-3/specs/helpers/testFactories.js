@@ -1,4 +1,5 @@
 import FavoriteButtonPresenter from '../../src/scripts/utils/favorite-button-presenter';
+import RestaurantsIdb from '../../src/scripts/data/restaurants-idb';
 
 const createFavoriteButtonPresenterWithRestaurant = async (restaurant) => {
 	await FavoriteButtonPresenter.init({
@@ -6,6 +7,7 @@ const createFavoriteButtonPresenterWithRestaurant = async (restaurant) => {
 			'#favorite-button-container'
 		),
 		restaurant,
+		favoriteRestaurants: RestaurantsIdb,
 	});
 };
 const clickButton = () =>

@@ -1,9 +1,10 @@
 import URL from '../config/url';
-import dataApi from '../data/data-api';
+import RestaurantsApi from '../data/restaurants-api';
 import UrlParser from '../routes/url-parser';
 import createStar from '../utils/create-star';
 import alertify from 'alertifyjs';
 import FavoriteButtonPresenter from '../utils/favorite-button-presenter';
+import RestaurantsIdb from '../data/restaurants-idb';
 
 const Detail = {
 	async renderHeader() {
@@ -41,7 +42,7 @@ const Detail = {
 	async renderContent() {
 		const id = UrlParser.parseActiveUrlWithoutCombiner().id;
 		try {
-			const result = await dataApi.getRestaurant(id);
+			const result = await RestaurantsApi.getRestaurant(id);
 			const restaurant = result.restaurant;
 			// console.log(restaurant);
 			const { name, description, address, city, pictureId, rating } =
@@ -81,6 +82,7 @@ const Detail = {
 					'#favorite-button-container'
 				),
 				restaurant,
+				favoriteRestaurants: RestaurantsIdb,
 			});
 		} catch (error) {
 			alertify.alert('Ops...', error.message);
@@ -142,7 +144,7 @@ const Detail = {
 			e.preventDefault();
 			const data = new FormData(form);
 			try {
-				const post = await dataApi.addReview(data);
+				const post = await RestaurantsApi.addReview(data);
 				if (!post.error) {
 					const { customerReviews } = post;
 					this._parsingCustomerReviews(customerReviews);

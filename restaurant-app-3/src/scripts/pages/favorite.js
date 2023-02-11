@@ -1,5 +1,5 @@
 import parsingListRestaurants from '../components/template-creator/list-restaurants';
-import dataIdb from '../data/data-idb';
+import dataIdb from '../data/restaurants-idb';
 
 const Favorite = {
 	async renderHeader() {
