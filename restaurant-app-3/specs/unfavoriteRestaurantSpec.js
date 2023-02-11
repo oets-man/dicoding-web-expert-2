@@ -1,7 +1,7 @@
 import RestaurantIdb from '../src/scripts/data/data-idb';
 import * as TestFactories from './helpers/testFactories';
 
-describe('Unliking A Movie', () => {
+describe('Unfavorite a restaurant -- ', () => {
 	beforeEach(async () => {
 		TestFactories.addFavoriteButtonContainer();
 		await RestaurantIdb.putRestaurant({ id: 1 });
@@ -11,24 +11,23 @@ describe('Unliking A Movie', () => {
 		await RestaurantIdb.deleteRestaurant(1);
 	});
 
-	it('should display unlike widget when the movie has been liked', async () => {
+	it('should display unfavorite widget when the restaurant has been favorite', async () => {
 		await TestFactories.createFavoriteButtonPresenterWithRestaurant({ id: 1 });
 		expect(TestFactories.labelUnfavorite()).toBeTruthy();
 	});
 
-	it('should not display like widget when the movie has been liked', async () => {
+	it('should not display favorite widget when the restaurant has been favorite', async () => {
 		await TestFactories.createFavoriteButtonPresenterWithRestaurant({ id: 1 });
 		expect(TestFactories.labelFavorite()).toBeFalsy();
 	});
 
-	it('should be able to remove liked movie from the list', async () => {
+	it('should be able to remove favorite restaurant  from the list', async () => {
 		await TestFactories.createFavoriteButtonPresenterWithRestaurant({ id: 1 });
-
 		TestFactories.clickButton();
 		expect(await RestaurantIdb.getAllRestaurants()).toEqual([]);
 	});
 
-	it('should not throw error if the unliked movie is not in the list', async () => {
+	it('should not throw error if the unfavorite restaurant is not in the list', async () => {
 		await TestFactories.createFavoriteButtonPresenterWithRestaurant({ id: 1 });
 
 		// hapus dulu film dari daftar film yang disukai

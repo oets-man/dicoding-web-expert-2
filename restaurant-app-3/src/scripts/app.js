@@ -9,10 +9,10 @@ class App {
 		this._hero = hero;
 		this._main = main;
 
-		this._initialAppShell();
+		this.#initialAppShell();
 	}
 
-	_initialAppShell() {
+	#initialAppShell() {
 		DrawerInitiator.init({
 			button: this._button,
 			drawer: this._drawer,
@@ -21,7 +21,7 @@ class App {
 		});
 	}
 
-	_skipLink() {
+	#skipLink() {
 		const skipLinkElement = document.querySelector('#skip-link');
 		skipLinkElement.addEventListener('click', (event) => {
 			event.preventDefault();
@@ -34,7 +34,7 @@ class App {
 		const page = routes[url];
 		await page.renderHeader();
 		await page.renderContent();
-		this._skipLink();
+		this.#skipLink();
 		this._drawer.classList.remove('open-nav');
 	}
 }

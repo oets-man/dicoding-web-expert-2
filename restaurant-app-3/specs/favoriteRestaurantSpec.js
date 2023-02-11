@@ -1,22 +1,22 @@
 import RestaurantIdb from '../src/scripts/data/data-idb';
 import * as TestFactories from './helpers/testFactories';
 
-describe('Favorite a restaurant', () => {
+describe('Favorite a restaurant -- ', () => {
 	beforeEach(() => {
 		TestFactories.addFavoriteButtonContainer();
 	});
 
-	it('should show the like button when the movie has not been liked before', async () => {
+	it('should show the favorite button when the restaurant has not been favorite before', async () => {
 		await TestFactories.createFavoriteButtonPresenterWithRestaurant({ id: 1 });
 		expect(TestFactories.labelFavorite()).toBeTruthy();
 	});
 
-	it('should not show the unlike button when the movie has not been liked before', async () => {
+	it('should not show the unfavorite button when the restaurant has not been favorite before', async () => {
 		await TestFactories.createFavoriteButtonPresenterWithRestaurant({ id: 1 });
 		expect(TestFactories.labelUnfavorite()).toBeFalsy();
 	});
 
-	it('should be able to like the movie', async () => {
+	it('should be able to add a restaurant to favorite', async () => {
 		await TestFactories.createFavoriteButtonPresenterWithRestaurant({ id: 1 });
 
 		TestFactories.clickButton();
@@ -26,7 +26,7 @@ describe('Favorite a restaurant', () => {
 		RestaurantIdb.deleteRestaurant(1);
 	});
 
-	it('should not add a movie again when its already liked', async () => {
+	it('should not add a restaurant again when its already favorite', async () => {
 		await TestFactories.createFavoriteButtonPresenterWithRestaurant({ id: 1 });
 
 		// Tambahkan film dengan ID 1 ke daftar film yang disukai
@@ -40,7 +40,7 @@ describe('Favorite a restaurant', () => {
 		RestaurantIdb.deleteRestaurant(1);
 	});
 
-	it('should not add a movie when it has no id', async () => {
+	it('should not add a restaurant when it has no id', async () => {
 		await TestFactories.createFavoriteButtonPresenterWithRestaurant({});
 
 		TestFactories.clickButton();

@@ -3,6 +3,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+// belum tertarik pakai ini
+// const WebpackPwaManifest = require('webpack-pwa-manifest');
+
 module.exports = {
 	entry: {
 		app: path.resolve(__dirname, 'src/index.js'),
