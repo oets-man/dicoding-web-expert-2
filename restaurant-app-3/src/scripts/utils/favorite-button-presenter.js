@@ -5,7 +5,7 @@ import {
 } from '../components/template-creator/button-favorite';
 import alertify from 'alertifyjs';
 
-const FavoriteButtonInitiator = {
+const FavoriteButtonPresenter = {
 	async init({ favoriteButtonContainer, restaurant }) {
 		this._favoriteButtonContainer = favoriteButtonContainer;
 		this._restaurant = restaurant;
@@ -49,4 +49,4 @@ const FavoriteButtonInitiator = {
 	},
 };
 
-export default FavoriteButtonInitiator;
+export default FavoriteButtonPresenter;

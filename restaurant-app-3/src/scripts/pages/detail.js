@@ -3,7 +3,7 @@ import dataApi from '../data/data-api';
 import UrlParser from '../routes/url-parser';
 import createStar from '../utils/create-star';
 import alertify from 'alertifyjs';
-import FavoriteButtonInitiator from '../utils/favorite-button-initiator';
+import FavoriteButtonPresenter from '../utils/favorite-button-presenter';
 
 const Detail = {
 	async renderHeader() {
@@ -76,7 +76,7 @@ const Detail = {
 
 			this._handleClickReview(document.querySelector('#form-review'));
 
-			FavoriteButtonInitiator.init({
+			FavoriteButtonPresenter.init({
 				favoriteButtonContainer: document.querySelector(
 					'#favorite-button-container'
 				),
