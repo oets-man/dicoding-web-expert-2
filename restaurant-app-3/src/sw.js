@@ -1,4 +1,5 @@
-import 'regenerator-runtime';
+// import 'regenerator-runtime'; // cukup di index.js
+
 import CacheHelper from './scripts/pwa/cache-helper';
 
 // Daftar asset yang akan dicaching
