@@ -5,6 +5,13 @@
     "node": true,
     "jasmine": true
   },
+  "ignorePatterns": [
+		"/dist/*.js",
+		"karma.conf.js",
+		"webpack*.js",
+		"/specs/*.js",
+		"/e2e/*.js"
+	],
   "extends": [
     "airbnb-base"
   ],
