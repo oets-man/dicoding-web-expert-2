@@ -9,7 +9,8 @@
     "test": "karma start",
     "lint": "eslint --fix --ext .js",
     "serve": "http-server dist",
-    "build-serve": "npm run build && npm run serve"
+    "build-serve": "npm run build && npm run serve",
+    "e2e": "codeceptjs run --steps"
   },
   "keywords": [],
   "author": "your_name <your.email@domain.com>",
@@ -19,6 +20,7 @@
     "@babel/preset-env": "^7.18.2",
     "babel-loader": "^8.2.5",
     "clean-webpack-plugin": "^4.0.0",
+    "codeceptjs": "^3.4.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
     "eslint": "^8.33.0",
@@ -36,6 +38,7 @@
     "karma-sourcemap-loader": "^0.3.8",
     "karma-webpack": "^5.0.0",
     "prettier": "^2.8.3",
+    "puppeteer": "^19.7.1",
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
@@ -52,5 +55,11 @@
     "axios": "^1.2.0",
     "idb": "^7.1.1",
     "regenerator-runtime": "^0.13.9"
+  },
+  "pnpm": {
+    "overrides": {
+      "minimatch@<3.0.5": ">=3.0.5",
+      "nanoid@>=3.0.0 <3.1.31": ">=3.1.31"
+    }
   }
 }
