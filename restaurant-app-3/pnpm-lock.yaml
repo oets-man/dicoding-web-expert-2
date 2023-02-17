@@ -31,6 +31,7 @@ specifiers:
   karma-webpack: ^5.0.0
   prettier: ^2.8.3
   puppeteer: ^19.7.1
+  puppeteer-shadow-selector: ^1.0.1
   regenerator-runtime: ^0.13.9
   sass: ^1.56.1
   sass-loader: ^13.2.0
@@ -73,6 +74,7 @@ devDependencies:
   karma-webpack: 5.0.0_webpack@5.75.0
   prettier: 2.8.3
   puppeteer: 19.7.1
+  puppeteer-shadow-selector: 1.0.1
   sass: 1.58.0
   sass-loader: 13.2.0_sass@1.58.0+webpack@5.75.0
   style-loader: 3.3.1_webpack@5.75.0
@@ -1901,6 +1903,12 @@ packages:
 
   /@types/node/18.11.18:
     resolution: {integrity: sha512-DHQpWGjyQKSHj3ebjFI/wRKcqQcdR+MoFBygntYOZytCqNfkd2ZC4ARDJ2DQqhjH5p85Nnd3jhUJIXrszFX/JA==}
+    dev: true
+
+  /@types/puppeteer/5.4.7:
+    resolution: {integrity: sha512-JdGWZZYL0vKapXF4oQTC5hLVNfOgdPrqeZ1BiQnGk5cB7HeE91EWUiTdVSdQPobRN8rIcdffjiOgCYJ/S8QrnQ==}
+    dependencies:
+      '@types/node': 18.11.18
     dev: true
 
   /@types/qs/6.9.7:
@@ -5075,6 +5083,10 @@ packages:
       - supports-color
     dev: true
 
+  /logical-not/1.0.9:
+    resolution: {integrity: sha512-RMNo9GZNS+1UXgwwwfPzuN5e5vlwbw+U0nti0qn5CrwnpcgBjl/4leZAbHjvThe31WF/aOb+fV6dLR6VjQfAvw==}
+    dev: true
+
   /loupe/2.3.6:
     resolution: {integrity: sha512-RaPMZKiMy8/JruncMU5Bt6na1eftNoo++R4Y+N2FrxkDVTrGvcyzFTsaGif4QTeKESheMGegbhw6iUAq+5A8zA==}
     dependencies:
@@ -5895,6 +5907,13 @@ packages:
       - encoding
       - supports-color
       - utf-8-validate
+    dev: true
+
+  /puppeteer-shadow-selector/1.0.1:
+    resolution: {integrity: sha512-chYoyXm+1auviI/IbldQBN4cvOezaWWMYKUN5973clLjt4qzoRqWsRXFPur1LSSH2p2lLkKCYQdt3IMqew85Ew==}
+    dependencies:
+      '@types/puppeteer': 5.4.7
+      logical-not: 1.0.9
     dev: true
 
   /puppeteer/19.7.1:

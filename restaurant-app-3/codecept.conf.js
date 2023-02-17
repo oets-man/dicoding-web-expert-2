@@ -8,17 +8,17 @@ setCommonPlugins();
 
 /** @type {CodeceptJS.MainConfig} */
 exports.config = {
-	tests: 'e2e/**/*.spec.js',
-	output: 'e2e/outputs',
-	helpers: {
-		Puppeteer: {
-			url: 'http://localhost:9000',
-			show: true,
-			windowSize: '1200x900',
-		},
-	},
-	include: {
-		I: './steps_file.js',
-	},
-	name: 'restaurant-app-3',
-};
+  tests: 'e2e/**/*.spec.js',
+  output: 'e2e/outputs',
+  helpers: {
+    Puppeteer: {
+      url: 'http://localhost:9000',
+      show: true,
+      windowSize: '1200x900'
+    }
+  },
+  include: {
+    I: './steps_file.js'
+  },
+  name: 'restaurant-app-3'
+}
