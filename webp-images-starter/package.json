@@ -1,22 +1,20 @@
 {
-  "name": "cat-alog",
+  "name": "webp-images-starter",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "your_name <your_email@domain.com>",
+  "author": "your_name <your_email@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
     "html-webpack-plugin": "^5.5.0",
-    "imagemin-mozjpeg": "9.x.x",
-    "imagemin-webpack-plugin": "^2.4.2",
-    "live-server": "^1.2.1",
+    "imagemin-webp-webpack-plugin": "^3.3.6",
     "style-loader": "^3.3.1",
     "webpack": "^5.73.0",
     "webpack-cli": "^4.10.0"
