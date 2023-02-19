@@ -2,6 +2,9 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
+const ImageminMozjpeg = require('imagemin-mozjpeg');
+const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
 
 // belum tertarik pakai ini
 // const WebpackPwaManifest = require('webpack-pwa-manifest');
@@ -58,5 +61,24 @@ module.exports = {
 			],
 		}),
 		new CleanWebpackPlugin(),
+		new ImageminWebpackPlugin({
+			plugins: [
+				ImageminMozjpeg({
+					quality: 75,
+					progressive: true,
+				}),
+			],
+		}),
+		new ImageminWebpWebpackPlugin({
+			config: [
+				{
+					test: /\.(jpe?g|png)/,
+					options: {
+						quality: 50,
+					},
+				},
+			],
+			overrideExtension: true,
+		}),
 	],
 };

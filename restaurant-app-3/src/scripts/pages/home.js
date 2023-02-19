@@ -6,7 +6,19 @@ const Home = {
 	async renderHeader() {
 		const hero = document.querySelector('#hero');
 		hero.innerHTML = `
-			<img src="./images/hero.jpg" alt="gambar hero" id="hero-img" />;
+			<picture>
+				<source type="image/webp" media="(max-width: 480px)" srcset="./images-sm/hero.webp">
+				<source type="image/jpeg" media="(max-width: 480px)" srcset="./images-sm/hero.jpg">
+
+				<source type="image/webp" media="(max-width: 768px)" srcset="./images-md/hero.webp">
+				<source type="image/jpeg" media="(max-width: 768px)" srcset="./images-md/hero.jpg">
+
+				<source type="image/webp" srcset="./images-lg/hero.webp">
+				<source type="image/jpeg" srcset="./images-lg/hero.jpg">
+
+				<img src="./images-lg/hero.jpg" alt="hero" id="hero-img" />
+			</picture>
+		  
 			<div class="hero-content">
 				<p class="hero-title">Cita Rasa</p>
 				<p class="hero-subtitle">Kuliner Nusantara</p>

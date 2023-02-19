@@ -10,7 +10,11 @@ const Detail = {
 	async renderHeader() {
 		const hero = document.querySelector('#hero');
 		hero.innerHTML = `
-			<img src="./images/hero.jpg" alt="gambar hero" id="hero-img" />
+			<picture>
+				<source media="(max-width: 480px)" srcset="./images-sm/hero.jpg" id="hero-sm">
+				<source media="(max-width: 768px)" srcset="./images-md/hero.jpg" id="hero-md">
+				<img src="./images-lg/hero.jpg" alt="hero" id="hero-lg" />
+			</picture>
 			<div class="favorite-container">
 				<div class="rating">
 					<div class="stars-outer">
@@ -59,8 +63,15 @@ const Detail = {
 			const { customerReviews } = restaurant;
 
 			document
-				.querySelector('#hero-img')
-				.setAttribute('src', `${URL.PICTURE.MEDIUM}/${pictureId}`);
+				.querySelector('#hero-lg')
+				.setAttribute('src', `${URL.PICTURE.LARGE}/${pictureId}`);
+			document
+				.querySelector('#hero-md')
+				.setAttribute('srcset', `${URL.PICTURE.MEDIUM}/${pictureId}`);
+			document
+				.querySelector('#hero-sm')
+				.setAttribute('srcset', `${URL.PICTURE.SMALL}/${pictureId}`);
+
 			document.querySelector('#detail-title').innerText = name;
 			document.querySelector(
 				'#address'
