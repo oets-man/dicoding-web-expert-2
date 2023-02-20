@@ -1,5 +1,4 @@
 import 'regenerator-runtime'; /* for async await transpile */
-import './styles/main.scss';
 import App from './scripts/app';
 import swRegister from './scripts/pwa/sw-register';
 

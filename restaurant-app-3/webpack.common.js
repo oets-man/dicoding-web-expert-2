@@ -5,19 +5,47 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
 const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
-
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 // belum tertarik pakai ini
 // const WebpackPwaManifest = require('webpack-pwa-manifest');
 
 module.exports = {
 	entry: {
 		app: path.resolve(__dirname, 'src/index.js'),
+		style: path.resolve(__dirname, 'src/styling.js'),
 		sw: path.resolve(__dirname, 'src/sw.js'),
 	},
 	output: {
 		filename: '[name].bundle.js',
 		path: path.resolve(__dirname, 'dist'),
 		clean: true,
+	},
+	optimization: {
+		minimize: true,
+		minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
+		splitChunks: {
+			chunks: 'all',
+			minSize: 20000,
+			maxSize: 80000,
+			minChunks: 1,
+			maxAsyncRequests: 30,
+			maxInitialRequests: 30,
+			automaticNameDelimiter: '~',
+			enforceSizeThreshold: 50000,
+			cacheGroups: {
+				defaultVendors: {
+					test: /[\\/]node_modules[\\/]/,
+					priority: -10,
+				},
+				default: {
+					minChunks: 2,
+					priority: -20,
+					reuseExistingChunk: true,
+				},
+			},
+		},
 	},
 	module: {
 		rules: [

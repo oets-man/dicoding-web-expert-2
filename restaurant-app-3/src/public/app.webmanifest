@@ -2,7 +2,7 @@
     "id": "restaurant-pwa-1",
     "start_url": "./index.html",
     "name": "Review Kuliner Nusantara",
-    "short_name": "Kuliner Nusantara",
+    "short_name": "Kulineran",
     "description": "Kata mereka tentang kuliner nusantara",
     "display": "standalone",
     "background_color": "#FFFFFF",

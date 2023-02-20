@@ -39,6 +39,7 @@ specifiers:
   karma-jasmine: ^4.0.2
   karma-sourcemap-loader: ^0.3.8
   karma-webpack: ^5.0.0
+  mini-css-extract-plugin: ^2.7.2
   prettier: ^2.8.3
   puppeteer: ^19.7.1
   puppeteer-shadow-selector: ^1.0.1
@@ -86,6 +87,7 @@ devDependencies:
   karma-jasmine: 4.0.2_karma@6.4.1
   karma-sourcemap-loader: 0.3.8
   karma-webpack: 5.0.0_webpack@5.75.0
+  mini-css-extract-plugin: 2.7.2_webpack@5.75.0
   prettier: 2.8.3
   puppeteer: 19.7.1
   puppeteer-shadow-selector: 1.0.1
@@ -6904,6 +6906,16 @@ packages:
     resolution: {integrity: sha512-9Wy1B3m3f66bPPmU5hdA4DR4PB2OfDU/+GS3yAB7IQozE3tqXaVv2zOjgla7MEGSRv95+ILmOuvhLkOK6wJtCQ==}
     dependencies:
       dom-walk: 0.1.2
+    dev: true
+
+  /mini-css-extract-plugin/2.7.2_webpack@5.75.0:
+    resolution: {integrity: sha512-EdlUizq13o0Pd+uCp+WO/JpkLvHRVGt97RqfeGhXqAcorYo1ypJSpkV+WDT0vY/kmh/p7wRdJNJtuyK540PXDw==}
+    engines: {node: '>= 12.13.0'}
+    peerDependencies:
+      webpack: ^5.0.0
+    dependencies:
+      schema-utils: 4.0.0
+      webpack: 5.75.0_webpack-cli@4.10.0
     dev: true
 
   /minimalistic-assert/1.0.1:
