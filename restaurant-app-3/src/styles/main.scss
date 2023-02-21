@@ -21,6 +21,7 @@ $light3: #acb992;
 
 body {
 	// max-width: 1200px;
+	min-height: 100vh;
 	margin: 0 auto;
 	background-color: $dark1;
 	color: $light1;
@@ -185,10 +186,10 @@ body {
 		width: 100%;
 		height: 100%;
 		img{
-			width: 100%;
-			height: 100%;
 			display: block;
 			position: relative;
+			width: 100%;
+			height: 100%;
 			object-fit: cover;
 			object-position: center;
 		}
@@ -199,7 +200,6 @@ body {
 		padding: 5px;
 		background-color: rgba(32, 39, 32, 0.7);
 		position: absolute;
-		margin: auto;
 		text-align: center;
 
 		.hero-title {
@@ -216,8 +216,8 @@ body {
 		}
 
 		.hero-subtitle {
-			text-shadow: 2px 2px 4px $light2;
-			font-variant: small-caps;
+			// text-shadow: 2px 2px 4px $light2;
+			// font-variant: small-caps;
 			color: $light1;
 			font-size: 2rem;
 			font-weight: 300;
@@ -227,7 +227,7 @@ body {
 
 	@media screen and (min-width: $medium) {
 		& {
-			height: 50vh;
+			height: 40vh;
 		}
 
 		.hero-content {
@@ -522,7 +522,6 @@ main {
 footer {
 	background-color: $dark2;
 	text-align: center;
-	height: 30px;
-	line-height: 30px;
 	font-size: small;
+	padding: 10px;
 }
